@@ -7,13 +7,6 @@
 
 <script setup>
 import { reactive, onMounted, ref, nextTick } from 'vue'
-// const state = reactive({
-//   originList: [],
-//   currentList: [],
-//   width: null,
-//   height: null,
-//   width:10
-// })
 
 const lineColor = {
   phase: Math.random() * Math.PI * 2,

@@ -12,26 +12,20 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 const state = reactive({
   menuList: [{
-    name: '气泡Loading',
-    path: '/bubble-loading'
-  }, {
-    name: '语音播报',
-    path: '/speak-voice'
-  }, {
-    name: 'canvas基础',
-    path: '/canvas-base'
-  }, {
-    name: 'canvas动画',
-    path: '/canvas-animation'
-  }, {
-    name: 'markdown编辑器',
-    path: '/markdown-editor'
-  }, {
-    name: 'three.js',
-    path: '/three'
-  }, {
-    name: '视频播放',
-    path: '/video-player'
+    name: 'part1',
+    path: '/three/part1'
+  // }, {
+  //   name: '语音播报',
+  //   path: '/speak-voice'
+  // }, {
+  //   name: 'canvas基础',
+  //   path: '/canvas-base'
+  // }, {
+  //   name: 'canvas动画',
+  //   path: '/canvas-animation'
+  // }, {
+  //   name: 'markdown编辑器',
+  //   path: '/markdown-editor'
   }]
 })
 

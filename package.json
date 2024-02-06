@@ -11,6 +11,7 @@
   "dependencies": {
     "mavon-editor": "^3.0.1",
     "sass": "^1.64.0",
+    "three": "^0.157.0",
     "video.js": "^8.5.2",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"

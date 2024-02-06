@@ -24,6 +24,18 @@ const routes = [
     path: '/markdown-editor', 
     component: () => import('@/views/Markdown/index.vue')
   },
+  {
+    path: '/three', 
+    component: () => import('@/views/ThreeJs/index.vue')
+  },
+  {
+    path: '/three/part1', 
+    component: () => import('@/views/ThreeJs/part1.vue')
+  },
+  {
+    path: '/video-player', 
+    component: () => import('@/views/VideoPlayer/index.vue')
+  }
 ]
 
 const router = createRouter({
