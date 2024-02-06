@@ -9,12 +9,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "flv.js": "^1.6.2",
     "mavon-editor": "^3.0.1",
     "sass": "^1.64.0",
+    "tdesign-vue-next": "^1.8.1",
     "three": "^0.157.0",
     "video.js": "^8.5.2",
+    "videojs-flvjs-es6": "^1.0.1",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.4"
+    "vue-router": "^4.2.4",
+    "xgplayer": "^3.0.12",
+    "xgplayer-flv": "^3.0.12",
+    "xgplayer-hls": "^3.0.12",
+    "xgplayer-mp4": "^3.0.12"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
