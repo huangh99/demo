@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import { ref,onMounted,onUnmounted } from 'vue'
+import { onMounted,onUnmounted } from 'vue'
 import Player from 'xgplayer';
 import FlvPlugin from 'xgplayer-flv'
 import HlsPlugin from 'xgplayer-hls'

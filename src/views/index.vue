@@ -32,6 +32,9 @@ const state = reactive({
   }, {
     name: '视频播放',
     path: '/video-player'
+  }, {
+    name: 'maptalks',
+    path: '/maptalks'
   }]
 })
 

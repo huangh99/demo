@@ -30,11 +30,19 @@ const routes = [
   },
   {
     path: '/three/part1', 
-    component: () => import('@/views/ThreeJs/part1.vue')
+    component: () => import('@/views/ThreeJs/Part1/index.vue')
   },
   {
     path: '/video-player', 
     component: () => import('@/views/VideoPlayer/index.vue')
+  },
+  {
+    path: '/maptalks', 
+    component: () => import('@/views/Maptalks/index.vue')
+  },
+  {
+    path: '/maptalks/aggregation', 
+    component: () => import('@/views/Maptalks/Aggregation/index.vue')
   }
 ]
 

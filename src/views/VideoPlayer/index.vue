@@ -22,7 +22,10 @@
       <div class="video-box">
         <XgVideoPlayer v-if="video.url" :url="video.url" :type="video.type"></XgVideoPlayer>
       </div>
-      <div class="video-box" v-for="item in 7"></div>
+      <div class="video-box">
+        <EasyVideoPlayer v-if="video.url" :url="video.url" :type="video.type"></EasyVideoPlayer>
+      </div>
+      <div class="video-box" v-for="item in 5"></div>
     </div>
   </div>
 </template>
@@ -31,6 +34,7 @@
 import { reactive,ref } from 'vue'
 import VideoJsPlayer from '@/components/Player/videojs.vue'
 import XgVideoPlayer from '@/components/Player/xgplayer.vue'
+import EasyVideoPlayer from '@/components/Player/easyPlayer.vue'
 const value = ref('')
 
 const video = reactive({

@@ -9,9 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@easydarwin/easyplayer": "^5.1.1",
     "flv.js": "^1.6.2",
+    "maptalks": "^1.0.0-rc.33",
     "mavon-editor": "^3.0.1",
     "sass": "^1.64.0",
+    "supercluster": "^8.0.1",
     "tdesign-vue-next": "^1.8.1",
     "three": "^0.157.0",
     "video.js": "^8.5.2",
