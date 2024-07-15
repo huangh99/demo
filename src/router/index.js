@@ -43,6 +43,10 @@ const routes = [
   {
     path: '/maptalks/aggregation', 
     component: () => import('@/views/Maptalks/Aggregation/index.vue')
+  },
+  {
+    path: '/maptalks/multi-polygon', 
+    component: () => import('@/views/Maptalks/MultiPolygon/index.vue')
   }
 ]
 

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@easydarwin/easyplayer": "^5.1.1",
+    "@maptalks/gl-layers": "^0.34.1",
     "flv.js": "^1.6.2",
     "maptalks": "^1.0.0-rc.33",
     "mavon-editor": "^3.0.1",

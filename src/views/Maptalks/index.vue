@@ -14,9 +14,9 @@ const state = reactive({
   menuList: [{
     name: '点聚合',
     path: '/maptalks/aggregation'
-  // }, {
-  //   name: '语音播报',
-  //   path: '/speak-voice'
+  }, {
+    name: 'MultiPolygon',
+    path: '/maptalks/multi-polygon'
   // }, {
   //   name: 'canvas基础',
   //   path: '/canvas-base'
