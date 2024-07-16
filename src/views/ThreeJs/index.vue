@@ -14,9 +14,9 @@ const state = reactive({
   menuList: [{
     name: 'part1',
     path: '/three/part1'
-  // }, {
-  //   name: '语音播报',
-  //   path: '/speak-voice'
+  }, {
+    name: 'part2',
+    path: '/three/part2'
   // }, {
   //   name: 'canvas基础',
   //   path: '/canvas-base'
@@ -32,9 +32,8 @@ const state = reactive({
 function handleClick(path){
   router.push(path)
 }
+
 </script>
-
-
 
 <style scoped>
 .menu-list{

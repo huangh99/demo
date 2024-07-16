@@ -33,6 +33,10 @@ const routes = [
     component: () => import('@/views/ThreeJs/Part1/index.vue')
   },
   {
+    path: '/three/part2', 
+    component: () => import('@/views/ThreeJs/Part2/index.vue')
+  },
+  {
     path: '/video-player', 
     component: () => import('@/views/VideoPlayer/index.vue')
   },

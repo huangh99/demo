@@ -3,17 +3,19 @@
 </template>
 
 <script setup>
+import { GUI } from 'three/addons/libs/lil-gui.module.min.js'
 import { ref, reactive, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
-import Stats from 'three/addons/libs/stats.module.js';
-const router = useRouter()
-const state = reactive({
 
-})
 
+const gui = new GUI()
 const threeDom = ref(null)
+
+gui.domElement.style.right = '0px';
+gui.domElement.style.width = '300px';
+
+
 
 function initThree(){
   // 创建一个三维场景
@@ -33,6 +35,8 @@ function initThree(){
   renderer.setPixelRatio(window.devicePixelRatio)
   renderer.setClearColor(0x444444, 1); //设置背景颜色
 
+  
+
   // 创建一个长宽高为1个单位的立方体
   const geometry = new THREE.BoxGeometry(1,1,1)
   // 创建网格材质
@@ -50,34 +54,24 @@ function initThree(){
   // 将网格模型对象添加到三维场景中
   scene.add(cube)
 
-  const material1 = new THREE.MeshLambertMaterial({
-    color: 0x00ff00 // 颜色
-  })
-  const sphere = new THREE.SphereGeometry(1);
-  const cube1 = new THREE.Mesh(sphere,material1)
-  cube1.position.set(3,0,0)
-  scene.add(cube1)
   // 设置相机的位置
   camera.position.set(0,1,5)
 
 
   // 7.创建光源(聚光灯光源)
-  const spotLight1 = new THREE.SpotLight(0xffffff, 10); //(光照颜色, 光照强度)
+  const pointLight = new THREE.PointLight(0xffffff, 10); //(光照颜色, 光照强度)
   // 设置光源位置
-  spotLight1.position.set(2, 2, 3);
-  scene.add(spotLight1);
+  pointLight.position.set(2, 2, 3);
+  scene.add(pointLight);
 
-  // 添加环境光
-  const ambientLight1 = new THREE.AmbientLight(0xffffff, 0.5); //(光照颜色, 光照强度)
-  scene.add(ambientLight1);
+  gui.add(pointLight, 'intensity', 0, 2.0).name('点光源强度').step(0.1)
+  gui.add(camera.position, 'x', 0, 10);
+  gui.addColor(pointLight, 'color').onChange((value)=>{
+    console.log(value);
+  })
 
-  // 平行光
-  const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-  // 设置光源的方向：通过光源position属性和目标指向对象的position属性计算
-  directionalLight.position.set(80, 100, 50);
-  // 方向光指向对象网格模型mesh，可以不设置，默认的位置是0,0,0
-  directionalLight.target = cube;
-  scene.add(directionalLight);
+
+
 
 
 
@@ -89,38 +83,11 @@ function initThree(){
   let control = new OrbitControls(camera, renderer.domElement);
   control.target.set(10,0,0)
 
-  // 点光源辅助观察
-  const pointLightHelper = new THREE.PointLightHelper(spotLight1, 10);
-  scene.add(pointLightHelper);
-
-  // DirectionalLightHelper：可视化平行光
-  const dirLightHelper = new THREE.DirectionalLightHelper(directionalLight, 5,0xff0000);
-  scene.add(dirLightHelper);
-
-  // renderer.render(scene, camera);
-
-  // control.addEventListener('change', function () {
-  //   // 浏览器控制台查看相机位置变化
-  //   renderer.render(scene, camera);
-  // });
-
-  //创建stats对象
-  const stats = new Stats();
-  //stats.domElement:web页面上输出计算结果,一个div元素，
-  threeDom.value.appendChild(stats.domElement);
-
-  const clock = new THREE.Clock();
 
   function render() {
-    stats.update();
-    const spt = clock.getDelta()*1000;//毫秒
-    console.log('两帧渲染时间间隔(毫秒)',spt);
-    console.log('帧率FPS',1000/spt);
-    //循环调用
+    //渲染循环调用
     renderer.render(scene, camera);
-    cube.rotateY(0.01) // 旋转动画
     requestAnimationFrame(render);
-    //渲染
   }
   render();
 
