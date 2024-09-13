@@ -9,6 +9,7 @@ import jsonData from './feature.json'
 
 let map = null
 let layer = null
+let focus = null
 
 function initMap() {
   map = new maptalks.Map('map', {
@@ -44,6 +45,14 @@ function initPolygon() {
     geo.on('click',()=>{
       // geo.flash(400,10)
       geo.hide()
+      map.animateTo({
+        zoom: 13,
+        center: [-74.08087539941407, 40.636167734187026],
+          // pitch: 0,
+          // bearing: 20
+        }, {
+          duration: 5000
+        });
     })
     layer.addGeometry(geo)
   })

@@ -35,6 +35,9 @@ const state = reactive({
   }, {
     name: 'maptalks',
     path: '/maptalks'
+  }, {
+    name: '音频可视化',
+    path: '/audio-view'
   }]
 })
 

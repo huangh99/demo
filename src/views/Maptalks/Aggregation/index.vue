@@ -7,6 +7,7 @@ import * as maptalks from 'maptalks';
 import Supercluster from 'supercluster'
 import { onMounted, reactive } from 'vue'
 import jsonData from './places.json'
+import FouceMarker from './FouceMarker.js'
 
 let map = null
 let layer = null

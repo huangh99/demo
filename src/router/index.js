@@ -51,6 +51,10 @@ const routes = [
   {
     path: '/maptalks/multi-polygon', 
     component: () => import('@/views/Maptalks/MultiPolygon/index.vue')
+  },
+  {
+    path: '/audio-view', 
+    component: () => import('@/views/AudioView/index.vue')
   }
 ]
 
